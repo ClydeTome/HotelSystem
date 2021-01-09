@@ -19,15 +19,11 @@ namespace WindowsFormsApp1
             FillCombo();
             DataGridUno();
         }
-
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
-
-
         int adult = 0;
         int child = 0;
         int hour = 0;
-
         void FillCombo()
         {
 
@@ -83,10 +79,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO CHECKIN VALUES ('" + txtGuestName.Text.Trim() + "','"
-               + cboRoomType.Text.Trim() + "','" + txtRoomNumber.Text.Trim() + "','" + txtAdults.Text.Trim() +
-               "','" + txtChildren.Text.Trim() + "','" + dtpCheckIn.Text + DateTime.Now.ToString(" h:mm:ss tt") + "','"
-               + dtpCheckOut.Text + "','" + txtTotal.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MMdd-t-HH-mmss" + txtHours.Text) + "');";
+            double hours = int.Parse(txtHours.Text);
+            string insertQuery = "INSERT INTO CHECKIN VALUES ('" +txtGuestName.Text.Trim()+ "','"
+               +cboRoomType.Text.Trim()+ "','" +txtRoomNumber.Text.Trim()+ "','" +txtAdults.Text.Trim()+
+               "','" +txtChildren.Text.Trim() + "','" +dtpCheckIn.Text + DateTime.Now.ToString(" h:mm:ss tt")+"','"
+               +dtpCheckOut.Text + DateTime.Now.AddHours(hours).ToString(" h:mm:ss tt")+ "','" +txtTotal.Text.Trim()+ "','" + DateTime.Now.ToString("yyyy-MMdd-t-HH-mmss" +txtHours.Text)+ "');";
 
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
             conn.Open();
@@ -106,15 +103,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
-
             DataGridUno();
             Clear_Text();
-
-
         }
 
         private void txtcombo1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             string sqlQuery = "SELECT * FROM RegisterRoomTable WHERE RoomType = '" + cboRoomType.Text + "'";
             SqlCommand objCommand = new SqlCommand(sqlQuery, conn);
             conn.Open();
