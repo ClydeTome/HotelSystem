@@ -15,8 +15,6 @@ namespace WindowsFormsApp1
     {
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
-
-
         public Form1()
         {
             InitializeComponent();
@@ -25,9 +23,6 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /* this.Hide();
-             Form2 mainform = new Form2();
-             mainform.Show();*/
             SqlDataAdapter sqa = new SqlDataAdapter("SELECT * FROM logincred WHERE Username='" + logtxtb1.Text.Trim() + "'and Password = '" + logtxtb2.Text.Trim() + "'", conn);
             DataTable dt = new DataTable();
             sqa.Fill(dt);
@@ -41,20 +36,6 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Incorrect Username/Password");
             }
-        
-
-          /*  try
-            {
-                conn.Open();
-                MessageBox.Show("Connected");
-                conn.Close();
-            }
-            catch (Exception a)
-            {
-                MessageBox.Show("Not Connected");
-                conn.Close();
-            }
-            */
         }
 
         private void button2_Click(object sender, EventArgs e)
