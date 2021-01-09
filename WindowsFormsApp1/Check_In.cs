@@ -20,9 +20,10 @@ namespace WindowsFormsApp1
             DataGridUno();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
-        
+
         int adult = 0;
         int child = 0;
+        int hour = 0;
 
         void FillCombo()
         {
@@ -37,7 +38,7 @@ namespace WindowsFormsApp1
                 while (mreader.Read())
                 {
                     string SRType = mreader["RoomType"].ToString();
-                    txtcombo1.Items.Add(SRType);
+                    cboRoomType.Items.Add(SRType);
                 }
             }
             catch (Exception ex)
@@ -49,12 +50,13 @@ namespace WindowsFormsApp1
 
         void Clear_Text()
         {
-            textBox2.Clear();
-            textBox1.Clear();
-            textBox3.Clear();
+            txtGuestName.Clear();
+            txtRoomNumber.Clear();
+            txtRoomRate.Clear();
             txtTotal.Clear();
             txtChildren.Text = "0";
             txtAdults.Text = "0";
+
         }
 
         void DataGridUno()
@@ -67,7 +69,6 @@ namespace WindowsFormsApp1
             checkingrid.RowTemplate.Height = 20;
             checkingrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-
             SqlCommand comm2 = new SqlCommand("select * from Amedities", conn);
             DataSet dataset2 = new DataSet();
             SqlDataAdapter sda2 = new SqlDataAdapter(comm2);
@@ -79,9 +80,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO CHECKIN VALUES ('" + textBox2.Text.Trim() + "','"
-               + txtcombo1.Text.Trim() + "','" + textBox1.Text.Trim() + "','" + txtAdults.Text.Trim() + "','" + txtChildren.Text.Trim() + "','" + dateTimePicker1.Text + "','" +
-               dateTimePicker2.Text + "','" + txtTotal.Text.Trim() + "');";
+            string insertQuery = "INSERT INTO CHECKIN VALUES ('" + txtGuestName.Text.Trim() + "','"
+               + cboRoomType.Text.Trim() + "','" + txtRoomNumber.Text.Trim() + "','" + txtAdults.Text.Trim() +
+               "','" + txtChildren.Text.Trim() + "','" + dtpCheckIn.Text + DateTime.Now.ToString(" h:mm:ss tt") + "','"
+               + dtpCheckOut.Text + "','" + txtTotal.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MMdd-t-HH-mmss" + txtHours.Text) + "');";
 
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
             conn.Open();
@@ -110,8 +112,7 @@ namespace WindowsFormsApp1
 
         private void txtcombo1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            string sqlQuery = "SELECT * FROM RegisterRoomTable WHERE RoomType = '" + txtcombo1.Text + "'";
+            string sqlQuery = "SELECT * FROM RegisterRoomTable WHERE RoomType = '" + cboRoomType.Text + "'";
             SqlCommand objCommand = new SqlCommand(sqlQuery, conn);
             conn.Open();
             SqlDataReader dr;
@@ -119,20 +120,25 @@ namespace WindowsFormsApp1
             while (dr.Read())
             {
                 string Tname = (string)dr["RoomID"].ToString();
-                textBox1.Text = Tname;
+                txtRoomNumber.Text = Tname;
                 string RRate = (string)dr["RoomRate"].ToString();
-                textBox3.Text = RRate;
+                txtRoomRate.Text = RRate;
             }
             conn.Close();
-            DateTime startTime = Convert.ToDateTime(dateTimePicker1.Value);
-            DateTime endTime = Convert.ToDateTime(dateTimePicker2.Value);          
+            if (txtHours.Text.Equals(""))
+            {
+                txtHours.Text = "0";
+            }
+            else if (txtRoomRate.Text.Equals(""))
+            {
+                txtRoomRate.Text = "0";
+            }
+            DateTime startTime = Convert.ToDateTime(dtpCheckIn.Value);
+            DateTime endTime = Convert.ToDateTime(dtpCheckOut.Value);
             TimeSpan span = endTime.Subtract(startTime);
-
-            double hoursDifference = span.TotalHours;            
-
-            double rates = int.Parse(textBox3.Text);
-            double totalbal = hoursDifference * rates;
-
+            double hours = int.Parse(txtHours.Text);
+            double rates = int.Parse(txtRoomRate.Text);
+            double totalbal = Math.Round(hours * rates);
             txtTotal.Text = totalbal.ToString();
         }
 
@@ -179,6 +185,44 @@ namespace WindowsFormsApp1
             this.Dispose();
             Form2 mainform = new Form2();
             mainform.Show();
+        }
+
+        private void txtHours_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHours.Text.Equals(""))
+            {
+                txtHours.Text = "0";
+            }
+            else if (txtRoomRate.Text.Equals(""))
+            {
+                txtRoomRate.Text = "0";
+            }
+            DateTime startTime = Convert.ToDateTime(dtpCheckIn.Value);
+            DateTime endTime = Convert.ToDateTime(dtpCheckOut.Value);
+            TimeSpan span = endTime.Subtract(startTime);
+            double hours = int.Parse(txtHours.Text);
+            double rates = int.Parse(txtRoomRate.Text);
+            double totalbal = Math.Round(hours * rates);
+            txtTotal.Text = totalbal.ToString();
+        }
+
+        private void btnSubHours_Click(object sender, EventArgs e)
+        {
+            if (hour != 0)
+            {
+                hour--;
+                txtHours.Text = hour.ToString();
+            }
+            else
+            {
+                MessageBox.Show("cannot have below zero");
+            }
+        }
+
+        private void btnAddHours_Click(object sender, EventArgs e)
+        {
+            hour++;
+            txtHours.Text = hour.ToString();
         }
     }
 }
