@@ -19,7 +19,10 @@ namespace WindowsFormsApp1
             FillCombo();
             DataGridUno();
         }
+
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
+
 
         int adult = 0;
         int child = 0;
