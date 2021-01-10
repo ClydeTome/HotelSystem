@@ -57,15 +57,27 @@
             this.AmeditiesGrid = new System.Windows.Forms.DataGridView();
             this.btnInclude = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtHours = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSubHours = new System.Windows.Forms.Button();
             this.btnAddHours = new System.Windows.Forms.Button();
+            this.btnSubHours = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtHours = new System.Windows.Forms.TextBox();
+            this.ReserveGrid = new System.Windows.Forms.DataGridView();
+            this.amedtextb1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.amedtextb2 = new System.Windows.Forms.TextBox();
+            this.reservebtn1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.ReservCKIbtn1 = new System.Windows.Forms.Button();
+            this.txtHours2 = new System.Windows.Forms.TextBox();
+            this.Reservtxtbox2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReserveGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -171,7 +183,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(150, 308);
+            this.btnBack.Location = new System.Drawing.Point(16, 337);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 23);
             this.btnBack.TabIndex = 63;
@@ -289,14 +301,16 @@
             this.dtpCheckOut.Name = "dtpCheckOut";
             this.dtpCheckOut.Size = new System.Drawing.Size(176, 20);
             this.dtpCheckOut.TabIndex = 84;
+            this.dtpCheckOut.CloseUp += new System.EventHandler(this.dtpCheckOut_CloseUp);
             // 
             // checkingrid
             // 
             this.checkingrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.checkingrid.Location = new System.Drawing.Point(357, 12);
+            this.checkingrid.Location = new System.Drawing.Point(357, 30);
             this.checkingrid.Name = "checkingrid";
-            this.checkingrid.Size = new System.Drawing.Size(497, 280);
+            this.checkingrid.Size = new System.Drawing.Size(851, 183);
             this.checkingrid.TabIndex = 85;
+            this.checkingrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.checkingrid_CellClick);
             // 
             // txtRoomRate
             // 
@@ -317,27 +331,40 @@
             // AmeditiesGrid
             // 
             this.AmeditiesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AmeditiesGrid.Location = new System.Drawing.Point(860, 12);
+            this.AmeditiesGrid.Location = new System.Drawing.Point(357, 437);
             this.AmeditiesGrid.Name = "AmeditiesGrid";
-            this.AmeditiesGrid.Size = new System.Drawing.Size(276, 150);
+            this.AmeditiesGrid.Size = new System.Drawing.Size(346, 150);
             this.AmeditiesGrid.TabIndex = 89;
             // 
             // btnInclude
             // 
-            this.btnInclude.Location = new System.Drawing.Point(860, 170);
+            this.btnInclude.Location = new System.Drawing.Point(735, 469);
             this.btnInclude.Name = "btnInclude";
             this.btnInclude.Size = new System.Drawing.Size(96, 23);
             this.btnInclude.TabIndex = 90;
             this.btnInclude.Text = "Include Amedity";
             this.btnInclude.UseVisualStyleBackColor = true;
+            this.btnInclude.Click += new System.EventHandler(this.btnInclude_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.Reservtxtbox2);
+            this.panel1.Controls.Add(this.txtHours2);
+            this.panel1.Controls.Add(this.ReservCKIbtn1);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.reservebtn1);
+            this.panel1.Controls.Add(this.amedtextb2);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.amedtextb1);
             this.panel1.Controls.Add(this.btnAddHours);
             this.panel1.Controls.Add(this.btnSubHours);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtHours);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.ReserveGrid);
             this.panel1.Controls.Add(this.btnInclude);
             this.panel1.Controls.Add(this.AmeditiesGrid);
             this.panel1.Controls.Add(this.label9);
@@ -371,30 +398,15 @@
             this.panel1.Size = new System.Drawing.Size(1229, 657);
             this.panel1.TabIndex = 1;
             // 
-            // dataGridView1
+            // btnAddHours
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(357, 308);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(497, 150);
-            this.dataGridView1.TabIndex = 91;
-            // 
-            // txtHours
-            // 
-            this.txtHours.Location = new System.Drawing.Point(106, 190);
-            this.txtHours.Name = "txtHours";
-            this.txtHours.Size = new System.Drawing.Size(43, 20);
-            this.txtHours.TabIndex = 92;
-            this.txtHours.TextChanged += new System.EventHandler(this.txtHours_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 196);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 93;
-            this.label2.Text = "Hours";
+            this.btnAddHours.Location = new System.Drawing.Point(169, 190);
+            this.btnAddHours.Name = "btnAddHours";
+            this.btnAddHours.Size = new System.Drawing.Size(23, 23);
+            this.btnAddHours.TabIndex = 95;
+            this.btnAddHours.Text = ">";
+            this.btnAddHours.UseVisualStyleBackColor = true;
+            this.btnAddHours.Click += new System.EventHandler(this.btnAddHours_Click);
             // 
             // btnSubHours
             // 
@@ -406,15 +418,133 @@
             this.btnSubHours.UseVisualStyleBackColor = true;
             this.btnSubHours.Click += new System.EventHandler(this.btnSubHours_Click);
             // 
-            // btnAddHours
+            // label2
             // 
-            this.btnAddHours.Location = new System.Drawing.Point(169, 190);
-            this.btnAddHours.Name = "btnAddHours";
-            this.btnAddHours.Size = new System.Drawing.Size(23, 23);
-            this.btnAddHours.TabIndex = 95;
-            this.btnAddHours.Text = ">";
-            this.btnAddHours.UseVisualStyleBackColor = true;
-            this.btnAddHours.Click += new System.EventHandler(this.btnAddHours_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 196);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 93;
+            this.label2.Text = "Hours";
+            // 
+            // txtHours
+            // 
+            this.txtHours.Location = new System.Drawing.Point(106, 190);
+            this.txtHours.Name = "txtHours";
+            this.txtHours.Size = new System.Drawing.Size(43, 20);
+            this.txtHours.TabIndex = 92;
+            this.txtHours.TextChanged += new System.EventHandler(this.txtHours_TextChanged);
+            // 
+            // ReserveGrid
+            // 
+            this.ReserveGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReserveGrid.Location = new System.Drawing.Point(357, 233);
+            this.ReserveGrid.Name = "ReserveGrid";
+            this.ReserveGrid.Size = new System.Drawing.Size(713, 187);
+            this.ReserveGrid.TabIndex = 91;
+            this.ReserveGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReserveGrid_CellClick);
+            // 
+            // amedtextb1
+            // 
+            this.amedtextb1.Location = new System.Drawing.Point(837, 511);
+            this.amedtextb1.Name = "amedtextb1";
+            this.amedtextb1.Size = new System.Drawing.Size(150, 20);
+            this.amedtextb1.TabIndex = 96;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(723, 517);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 13);
+            this.label11.TabIndex = 97;
+            this.label11.Text = "Guest Transaction ID";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(765, 547);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 98;
+            this.label13.Text = "Guest Name";
+            // 
+            // amedtextb2
+            // 
+            this.amedtextb2.Location = new System.Drawing.Point(837, 540);
+            this.amedtextb2.Name = "amedtextb2";
+            this.amedtextb2.Size = new System.Drawing.Size(150, 20);
+            this.amedtextb2.TabIndex = 99;
+            // 
+            // reservebtn1
+            // 
+            this.reservebtn1.Location = new System.Drawing.Point(169, 308);
+            this.reservebtn1.Name = "reservebtn1";
+            this.reservebtn1.Size = new System.Drawing.Size(120, 23);
+            this.reservebtn1.TabIndex = 100;
+            this.reservebtn1.Text = "Reserve";
+            this.reservebtn1.UseVisualStyleBackColor = true;
+            this.reservebtn1.Click += new System.EventHandler(this.reservebtn1_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(354, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 13);
+            this.label14.TabIndex = 101;
+            this.label14.Text = "Check-In";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(354, 215);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 13);
+            this.label15.TabIndex = 102;
+            this.label15.Text = "Reservations";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(354, 421);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 103;
+            this.label16.Text = "Amedities";
+            // 
+            // ReservCKIbtn1
+            // 
+            this.ReservCKIbtn1.Location = new System.Drawing.Point(1088, 244);
+            this.ReservCKIbtn1.Name = "ReservCKIbtn1";
+            this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 21);
+            this.ReservCKIbtn1.TabIndex = 104;
+            this.ReservCKIbtn1.Text = "Check-In";
+            this.ReservCKIbtn1.UseVisualStyleBackColor = true;
+            this.ReservCKIbtn1.Click += new System.EventHandler(this.ReservCKIbtn1_Click);
+            // 
+            // txtHours2
+            // 
+            this.txtHours2.Location = new System.Drawing.Point(198, 192);
+            this.txtHours2.Name = "txtHours2";
+            this.txtHours2.Size = new System.Drawing.Size(43, 20);
+            this.txtHours2.TabIndex = 105;
+            // 
+            // Reservtxtbox2
+            // 
+            this.Reservtxtbox2.Location = new System.Drawing.Point(1076, 295);
+            this.Reservtxtbox2.Name = "Reservtxtbox2";
+            this.Reservtxtbox2.Size = new System.Drawing.Size(150, 20);
+            this.Reservtxtbox2.TabIndex = 106;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1073, 279);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(117, 13);
+            this.label17.TabIndex = 107;
+            this.label17.Text = "ReserveTransaction ID";
             // 
             // Check_In
             // 
@@ -429,7 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReserveGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,10 +595,22 @@
         private System.Windows.Forms.DataGridView AmeditiesGrid;
         private System.Windows.Forms.Button btnInclude;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ReserveGrid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHours;
         private System.Windows.Forms.Button btnAddHours;
         private System.Windows.Forms.Button btnSubHours;
+        private System.Windows.Forms.TextBox amedtextb2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox amedtextb1;
+        private System.Windows.Forms.Button reservebtn1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button ReservCKIbtn1;
+        private System.Windows.Forms.TextBox txtHours2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox Reservtxtbox2;
     }
 }
