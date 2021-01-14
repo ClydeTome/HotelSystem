@@ -39,6 +39,7 @@
             this.regtxt4 = new System.Windows.Forms.TextBox();
             this.regbtn1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.AmeditiesGrid = new System.Windows.Forms.DataGridView();
             this.regview1 = new System.Windows.Forms.DataGridView();
             this.regbtnref = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtAmePrice = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regview1)).BeginInit();
@@ -75,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 151);
+            this.label2.Location = new System.Drawing.Point(48, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 228);
+            this.label3.Location = new System.Drawing.Point(48, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 190);
+            this.label4.Location = new System.Drawing.Point(48, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 16);
             this.label4.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(67, 267);
+            this.label5.Location = new System.Drawing.Point(48, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 16);
             this.label5.TabIndex = 7;
@@ -115,21 +115,21 @@
             // 
             // regtxt1
             // 
-            this.regtxt1.Location = new System.Drawing.Point(174, 151);
+            this.regtxt1.Location = new System.Drawing.Point(155, 91);
             this.regtxt1.Name = "regtxt1";
             this.regtxt1.Size = new System.Drawing.Size(166, 20);
             this.regtxt1.TabIndex = 8;
             // 
             // regtxt3
             // 
-            this.regtxt3.Location = new System.Drawing.Point(174, 221);
+            this.regtxt3.Location = new System.Drawing.Point(155, 161);
             this.regtxt3.Name = "regtxt3";
             this.regtxt3.Size = new System.Drawing.Size(166, 20);
             this.regtxt3.TabIndex = 9;
             // 
             // regtxt2
             // 
-            this.regtxt2.Location = new System.Drawing.Point(174, 183);
+            this.regtxt2.Location = new System.Drawing.Point(155, 123);
             this.regtxt2.Name = "regtxt2";
             this.regtxt2.Size = new System.Drawing.Size(166, 20);
             this.regtxt2.TabIndex = 10;
@@ -137,7 +137,7 @@
             // 
             // regtxt4
             // 
-            this.regtxt4.Location = new System.Drawing.Point(174, 264);
+            this.regtxt4.Location = new System.Drawing.Point(155, 204);
             this.regtxt4.Name = "regtxt4";
             this.regtxt4.Size = new System.Drawing.Size(166, 20);
             this.regtxt4.TabIndex = 11;
@@ -145,7 +145,7 @@
             // 
             // regbtn1
             // 
-            this.regbtn1.Location = new System.Drawing.Point(58, 325);
+            this.regbtn1.Location = new System.Drawing.Point(46, 245);
             this.regbtn1.Name = "regbtn1";
             this.regbtn1.Size = new System.Drawing.Size(91, 38);
             this.regbtn1.TabIndex = 12;
@@ -166,6 +166,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(906, 611);
             this.panel1.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 336);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Amedity List";
             // 
             // AmeditiesGrid
             // 
@@ -233,9 +242,9 @@
             // 
             // regbt2
             // 
-            this.regbt2.Location = new System.Drawing.Point(58, 369);
+            this.regbt2.Location = new System.Drawing.Point(228, 636);
             this.regbt2.Name = "regbt2";
-            this.regbt2.Size = new System.Drawing.Size(91, 38);
+            this.regbt2.Size = new System.Drawing.Size(93, 22);
             this.regbt2.TabIndex = 15;
             this.regbt2.Text = "Return";
             this.regbt2.UseVisualStyleBackColor = true;
@@ -243,9 +252,9 @@
             // 
             // prgbtn
             // 
-            this.prgbtn.Location = new System.Drawing.Point(155, 325);
+            this.prgbtn.Location = new System.Drawing.Point(46, 341);
             this.prgbtn.Name = "prgbtn";
-            this.prgbtn.Size = new System.Drawing.Size(89, 38);
+            this.prgbtn.Size = new System.Drawing.Size(83, 23);
             this.prgbtn.TabIndex = 16;
             this.prgbtn.Text = "Purge Table";
             this.prgbtn.UseVisualStyleBackColor = true;
@@ -253,21 +262,21 @@
             // 
             // txtAmeID
             // 
-            this.txtAmeID.Location = new System.Drawing.Point(70, 461);
+            this.txtAmeID.Location = new System.Drawing.Point(46, 450);
             this.txtAmeID.Name = "txtAmeID";
             this.txtAmeID.Size = new System.Drawing.Size(137, 20);
             this.txtAmeID.TabIndex = 17;
             // 
             // txtAmeName
             // 
-            this.txtAmeName.Location = new System.Drawing.Point(70, 506);
+            this.txtAmeName.Location = new System.Drawing.Point(46, 495);
             this.txtAmeName.Name = "txtAmeName";
             this.txtAmeName.Size = new System.Drawing.Size(137, 20);
             this.txtAmeName.TabIndex = 18;
             // 
             // btnAme
             // 
-            this.btnAme.Location = new System.Drawing.Point(70, 590);
+            this.btnAme.Location = new System.Drawing.Point(46, 579);
             this.btnAme.Name = "btnAme";
             this.btnAme.Size = new System.Drawing.Size(92, 42);
             this.btnAme.TabIndex = 19;
@@ -278,7 +287,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 445);
+            this.label9.Location = new System.Drawing.Point(43, 434);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 20;
@@ -287,7 +296,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(67, 490);
+            this.label10.Location = new System.Drawing.Point(43, 479);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 21;
@@ -295,7 +304,7 @@
             // 
             // txtAmePrice
             // 
-            this.txtAmePrice.Location = new System.Drawing.Point(70, 545);
+            this.txtAmePrice.Location = new System.Drawing.Point(46, 534);
             this.txtAmePrice.Name = "txtAmePrice";
             this.txtAmePrice.Size = new System.Drawing.Size(137, 20);
             this.txtAmePrice.TabIndex = 22;
@@ -303,20 +312,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(67, 529);
+            this.label11.Location = new System.Drawing.Point(43, 518);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 13);
             this.label11.TabIndex = 23;
             this.label11.Text = "Amedity Price";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 336);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Amedity List";
             // 
             // RegisterRoom
             // 
@@ -346,6 +346,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegisterRoom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterRoom";
             this.Load += new System.EventHandler(this.RegisterRoom_Load);
             this.panel1.ResumeLayout(false);

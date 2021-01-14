@@ -175,7 +175,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 23);
             this.btnBack.TabIndex = 63;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Return";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -316,7 +316,7 @@
             this.btnInclude.Name = "btnInclude";
             this.btnInclude.Size = new System.Drawing.Size(96, 23);
             this.btnInclude.TabIndex = 90;
-            this.btnInclude.Text = "Include Amedity";
+            this.btnInclude.Text = "Include Amenity";
             this.btnInclude.UseVisualStyleBackColor = true;
             this.btnInclude.Click += new System.EventHandler(this.btnInclude_Click);
             // 
@@ -381,7 +381,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(354, 228);
+            this.label17.Location = new System.Drawing.Point(1073, 279);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(117, 13);
             this.label17.TabIndex = 107;
@@ -389,7 +389,7 @@
             // 
             // Reservtxtbox2
             // 
-            this.Reservtxtbox2.Location = new System.Drawing.Point(357, 244);
+            this.Reservtxtbox2.Location = new System.Drawing.Point(1076, 295);
             this.Reservtxtbox2.Name = "Reservtxtbox2";
             this.Reservtxtbox2.Size = new System.Drawing.Size(150, 20);
             this.Reservtxtbox2.TabIndex = 106;
@@ -403,18 +403,18 @@
             // 
             // ReservCKIbtn1
             // 
-            this.ReservCKIbtn1.Location = new System.Drawing.Point(162, 337);
+            this.ReservCKIbtn1.Location = new System.Drawing.Point(1088, 244);
             this.ReservCKIbtn1.Name = "ReservCKIbtn1";
-            this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 37);
+            this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 21);
             this.ReservCKIbtn1.TabIndex = 104;
-            this.ReservCKIbtn1.Text = "Check-In from Reserve";
+            this.ReservCKIbtn1.Text = "Check-In";
             this.ReservCKIbtn1.UseVisualStyleBackColor = true;
             this.ReservCKIbtn1.Click += new System.EventHandler(this.ReservCKIbtn1_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(354, 460);
+            this.label16.Location = new System.Drawing.Point(354, 421);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 13);
             this.label16.TabIndex = 103;
@@ -440,7 +440,7 @@
             // 
             // reservebtn1
             // 
-            this.reservebtn1.Location = new System.Drawing.Point(162, 308);
+            this.reservebtn1.Location = new System.Drawing.Point(169, 308);
             this.reservebtn1.Name = "reservebtn1";
             this.reservebtn1.Size = new System.Drawing.Size(120, 23);
             this.reservebtn1.TabIndex = 100;
@@ -458,7 +458,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(60, 519);
+            this.label13.Location = new System.Drawing.Point(765, 547);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 98;
@@ -467,7 +467,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 489);
+            this.label11.Location = new System.Drawing.Point(723, 517);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 13);
             this.label11.TabIndex = 97;
@@ -475,7 +475,7 @@
             // 
             // amedtextb1
             // 
-            this.amedtextb1.Location = new System.Drawing.Point(132, 486);
+            this.amedtextb1.Location = new System.Drawing.Point(837, 511);
             this.amedtextb1.Name = "amedtextb1";
             this.amedtextb1.Size = new System.Drawing.Size(150, 20);
             this.amedtextb1.TabIndex = 96;
@@ -615,6 +615,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Name = "Check_In";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check_In";
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).EndInit();

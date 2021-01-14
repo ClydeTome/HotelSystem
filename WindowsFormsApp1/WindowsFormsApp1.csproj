@@ -52,6 +52,12 @@
     <Compile Include="Amedities.Designer.cs">
       <DependentUpon>Amedities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Check-Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check-Out.Designer.cs">
+      <DependentUpon>Check-Out.cs</DependentUpon>
+    </Compile>
     <Compile Include="Check_In.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Amedities.resx">
       <DependentUpon>Amedities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check-Out.resx">
+      <DependentUpon>Check-Out.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Check_In.resx">
       <DependentUpon>Check_In.cs</DependentUpon>

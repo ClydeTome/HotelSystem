@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
             Form2 mainform = new Form2();
             mainform.Show();
         }

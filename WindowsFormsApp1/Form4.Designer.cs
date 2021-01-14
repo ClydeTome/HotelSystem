@@ -398,6 +398,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.ReserveGrid);
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservation Form";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ReserveGrid)).EndInit();

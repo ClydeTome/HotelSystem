@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
             Form2 mainform = new Form2();
             mainform.Show();
         }
@@ -141,14 +141,18 @@ namespace WindowsFormsApp1
             conn.Open();
             try
             {
-                if (cmd.ExecuteNonQuery() == 1)
+                DialogResult ex = MessageBox.Show("Are you really really really sure???", "Warning", MessageBoxButtons.YesNo);
+                if (ex == DialogResult.Yes)
                 {
-                    MessageBox.Show("Data Inserted");
-                }
-                else
-                {
-                    MessageBox.Show("All Data Deleted.");
-                }
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Data Inserted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("All Data Deleted.");
+                    }
+                } 
             }
             catch (Exception ex)
             {

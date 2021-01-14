@@ -119,11 +119,11 @@ namespace WindowsFormsApp1
                 {
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Data Inserted");
+                        MessageBox.Show("Check-In Successful!");
                     }
                     else
                     {
-                        MessageBox.Show("Data Not Inserted");
+                        MessageBox.Show("Error in Checking-In");
                     }
                 }
                 catch (Exception ex)
@@ -208,7 +208,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
             Form2 mainform = new Form2();
             mainform.Show();
         }

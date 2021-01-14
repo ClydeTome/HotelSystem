@@ -44,7 +44,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 244);
+            this.button1.Location = new System.Drawing.Point(12, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 39);
             this.button1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 289);
+            this.button2.Location = new System.Drawing.Point(12, 291);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 39);
             this.button2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 65);
+            this.button4.Location = new System.Drawing.Point(12, 67);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(112, 39);
             this.button4.TabIndex = 3;
@@ -74,16 +74,17 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 199);
+            this.button5.Location = new System.Drawing.Point(12, 201);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(112, 39);
             this.button5.TabIndex = 4;
             this.button5.Text = "Check Out";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 110);
+            this.button6.Location = new System.Drawing.Point(12, 112);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(112, 39);
             this.button6.TabIndex = 5;
@@ -93,11 +94,11 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(12, 155);
+            this.button7.Location = new System.Drawing.Point(12, 157);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(112, 38);
             this.button7.TabIndex = 6;
-            this.button7.Text = "Rooms";
+            this.button7.Text = "Amenities";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -138,6 +139,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(197, 21);
             this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -165,7 +167,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form2";
-            this.Text = "Main Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Main Menu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
