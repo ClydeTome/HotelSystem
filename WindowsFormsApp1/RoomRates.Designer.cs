@@ -82,6 +82,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "RoomRates";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomRates";
             this.ResumeLayout(false);
             this.PerformLayout();

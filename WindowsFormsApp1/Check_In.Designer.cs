@@ -57,23 +57,23 @@
             this.AmeditiesGrid = new System.Windows.Forms.DataGridView();
             this.btnInclude = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Reservtxtbox2 = new System.Windows.Forms.TextBox();
+            this.txtHours2 = new System.Windows.Forms.TextBox();
+            this.ReservCKIbtn1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.reservebtn1 = new System.Windows.Forms.Button();
+            this.amedtextb2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.amedtextb1 = new System.Windows.Forms.TextBox();
             this.btnAddHours = new System.Windows.Forms.Button();
             this.btnSubHours = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHours = new System.Windows.Forms.TextBox();
             this.ReserveGrid = new System.Windows.Forms.DataGridView();
-            this.amedtextb1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.amedtextb2 = new System.Windows.Forms.TextBox();
-            this.reservebtn1 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.ReservCKIbtn1 = new System.Windows.Forms.Button();
-            this.txtHours2 = new System.Windows.Forms.TextBox();
-            this.Reservtxtbox2 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -187,7 +187,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 23);
             this.btnBack.TabIndex = 63;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Return";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -342,7 +342,7 @@
             this.btnInclude.Name = "btnInclude";
             this.btnInclude.Size = new System.Drawing.Size(96, 23);
             this.btnInclude.TabIndex = 90;
-            this.btnInclude.Text = "Include Amedity";
+            this.btnInclude.Text = "Include Amenity";
             this.btnInclude.UseVisualStyleBackColor = true;
             this.btnInclude.Click += new System.EventHandler(this.btnInclude_Click);
             // 
@@ -398,6 +398,108 @@
             this.panel1.Size = new System.Drawing.Size(1229, 657);
             this.panel1.TabIndex = 1;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1073, 279);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(117, 13);
+            this.label17.TabIndex = 107;
+            this.label17.Text = "ReserveTransaction ID";
+            // 
+            // Reservtxtbox2
+            // 
+            this.Reservtxtbox2.Location = new System.Drawing.Point(1076, 295);
+            this.Reservtxtbox2.Name = "Reservtxtbox2";
+            this.Reservtxtbox2.Size = new System.Drawing.Size(150, 20);
+            this.Reservtxtbox2.TabIndex = 106;
+            // 
+            // txtHours2
+            // 
+            this.txtHours2.Location = new System.Drawing.Point(198, 192);
+            this.txtHours2.Name = "txtHours2";
+            this.txtHours2.Size = new System.Drawing.Size(43, 20);
+            this.txtHours2.TabIndex = 105;
+            // 
+            // ReservCKIbtn1
+            // 
+            this.ReservCKIbtn1.Location = new System.Drawing.Point(1088, 244);
+            this.ReservCKIbtn1.Name = "ReservCKIbtn1";
+            this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 21);
+            this.ReservCKIbtn1.TabIndex = 104;
+            this.ReservCKIbtn1.Text = "Check-In";
+            this.ReservCKIbtn1.UseVisualStyleBackColor = true;
+            this.ReservCKIbtn1.Click += new System.EventHandler(this.ReservCKIbtn1_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(354, 421);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 103;
+            this.label16.Text = "Amedities";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(354, 215);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 13);
+            this.label15.TabIndex = 102;
+            this.label15.Text = "Reservations";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(354, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 13);
+            this.label14.TabIndex = 101;
+            this.label14.Text = "Check-In";
+            // 
+            // reservebtn1
+            // 
+            this.reservebtn1.Location = new System.Drawing.Point(169, 308);
+            this.reservebtn1.Name = "reservebtn1";
+            this.reservebtn1.Size = new System.Drawing.Size(120, 23);
+            this.reservebtn1.TabIndex = 100;
+            this.reservebtn1.Text = "Reserve";
+            this.reservebtn1.UseVisualStyleBackColor = true;
+            this.reservebtn1.Click += new System.EventHandler(this.reservebtn1_Click);
+            // 
+            // amedtextb2
+            // 
+            this.amedtextb2.Location = new System.Drawing.Point(837, 540);
+            this.amedtextb2.Name = "amedtextb2";
+            this.amedtextb2.Size = new System.Drawing.Size(150, 20);
+            this.amedtextb2.TabIndex = 99;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(765, 547);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 98;
+            this.label13.Text = "Guest Name";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(723, 517);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 13);
+            this.label11.TabIndex = 97;
+            this.label11.Text = "Guest Transaction ID";
+            // 
+            // amedtextb1
+            // 
+            this.amedtextb1.Location = new System.Drawing.Point(837, 511);
+            this.amedtextb1.Name = "amedtextb1";
+            this.amedtextb1.Size = new System.Drawing.Size(150, 20);
+            this.amedtextb1.TabIndex = 96;
+            // 
             // btnAddHours
             // 
             this.btnAddHours.Location = new System.Drawing.Point(169, 190);
@@ -444,108 +546,6 @@
             this.ReserveGrid.TabIndex = 91;
             this.ReserveGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReserveGrid_CellClick);
             // 
-            // amedtextb1
-            // 
-            this.amedtextb1.Location = new System.Drawing.Point(837, 511);
-            this.amedtextb1.Name = "amedtextb1";
-            this.amedtextb1.Size = new System.Drawing.Size(150, 20);
-            this.amedtextb1.TabIndex = 96;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(723, 517);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 13);
-            this.label11.TabIndex = 97;
-            this.label11.Text = "Guest Transaction ID";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(765, 547);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 13);
-            this.label13.TabIndex = 98;
-            this.label13.Text = "Guest Name";
-            // 
-            // amedtextb2
-            // 
-            this.amedtextb2.Location = new System.Drawing.Point(837, 540);
-            this.amedtextb2.Name = "amedtextb2";
-            this.amedtextb2.Size = new System.Drawing.Size(150, 20);
-            this.amedtextb2.TabIndex = 99;
-            // 
-            // reservebtn1
-            // 
-            this.reservebtn1.Location = new System.Drawing.Point(169, 308);
-            this.reservebtn1.Name = "reservebtn1";
-            this.reservebtn1.Size = new System.Drawing.Size(120, 23);
-            this.reservebtn1.TabIndex = 100;
-            this.reservebtn1.Text = "Reserve";
-            this.reservebtn1.UseVisualStyleBackColor = true;
-            this.reservebtn1.Click += new System.EventHandler(this.reservebtn1_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(354, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 13);
-            this.label14.TabIndex = 101;
-            this.label14.Text = "Check-In";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(354, 215);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 13);
-            this.label15.TabIndex = 102;
-            this.label15.Text = "Reservations";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(354, 421);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
-            this.label16.TabIndex = 103;
-            this.label16.Text = "Amedities";
-            // 
-            // ReservCKIbtn1
-            // 
-            this.ReservCKIbtn1.Location = new System.Drawing.Point(1088, 244);
-            this.ReservCKIbtn1.Name = "ReservCKIbtn1";
-            this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 21);
-            this.ReservCKIbtn1.TabIndex = 104;
-            this.ReservCKIbtn1.Text = "Check-In";
-            this.ReservCKIbtn1.UseVisualStyleBackColor = true;
-            this.ReservCKIbtn1.Click += new System.EventHandler(this.ReservCKIbtn1_Click);
-            // 
-            // txtHours2
-            // 
-            this.txtHours2.Location = new System.Drawing.Point(198, 192);
-            this.txtHours2.Name = "txtHours2";
-            this.txtHours2.Size = new System.Drawing.Size(43, 20);
-            this.txtHours2.TabIndex = 105;
-            // 
-            // Reservtxtbox2
-            // 
-            this.Reservtxtbox2.Location = new System.Drawing.Point(1076, 295);
-            this.Reservtxtbox2.Name = "Reservtxtbox2";
-            this.Reservtxtbox2.Size = new System.Drawing.Size(150, 20);
-            this.Reservtxtbox2.TabIndex = 106;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1073, 279);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(117, 13);
-            this.label17.TabIndex = 107;
-            this.label17.Text = "ReserveTransaction ID";
-            // 
             // Check_In
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +554,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Name = "Check_In";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check_In";
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).EndInit();

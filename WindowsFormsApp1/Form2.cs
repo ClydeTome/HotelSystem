@@ -21,9 +21,26 @@ namespace WindowsFormsApp1
             SqlDataAdapter sda = new SqlDataAdapter(comm);
             sda.Fill(dataset);
             dataGridView1.DataSource = dataset.Tables[0];
+
+            FillCombo();
         }
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
+
+        void FillCombo()
+        {
+            conn.Open();
+            SqlCommand comm = new SqlCommand("select RoomType from RegisterRoomTable", conn);
+            SqlCommand count = new SqlCommand("select count(RoomType) from RegisterRoomTable", conn);
+            SqlDataReader sdr = comm.ExecuteReader();
+            // Adding elements in the combobox
+            while (sdr.Read())
+            {
+                comboBox1.Items.Add(sdr["RoomType"]);
+            }
+            sdr.Close();
+            conn.Close();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -66,7 +83,9 @@ namespace WindowsFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Amedities amed = new Amedities();
+            amed.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -74,6 +93,24 @@ namespace WindowsFormsApp1
             this.Hide();
             Form4 rr = new Form4();
             rr.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Check_Out co = new Check_Out();
+            co.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = "select * from RegisterRoomTable where RoomType='" + comboBox1.SelectedItem.ToString() + "'";
+            comm.Connection = conn;
+            DataSet dataset = new DataSet();
+            SqlDataAdapter sda = new SqlDataAdapter(comm);
+            sda.Fill(dataset);
+            dataGridView1.DataSource = dataset.Tables[0];
         }
     }
 }
