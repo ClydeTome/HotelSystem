@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
             Form2 mainform = new Form2();
             mainform.Show();
         }
