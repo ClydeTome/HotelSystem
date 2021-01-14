@@ -32,8 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -49,14 +47,18 @@
             this.bttnAddAdult = new System.Windows.Forms.Button();
             this.bttnAddChildren = new System.Windows.Forms.Button();
             this.txtGuestName = new System.Windows.Forms.TextBox();
-            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
-            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
             this.checkingrid = new System.Windows.Forms.DataGridView();
             this.txtRoomRate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.AmeditiesGrid = new System.Windows.Forms.DataGridView();
             this.btnInclude = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtAmedityPrice = new System.Windows.Forms.TextBox();
+            this.txtAmedityName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtAmedityID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.Reservtxtbox2 = new System.Windows.Forms.TextBox();
             this.txtHours2 = new System.Windows.Forms.TextBox();
@@ -65,7 +67,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.reservebtn1 = new System.Windows.Forms.Button();
-            this.amedtextb2 = new System.Windows.Forms.TextBox();
+            this.txtAmenityGuestName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.amedtextb1 = new System.Windows.Forms.TextBox();
@@ -74,6 +76,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHours = new System.Windows.Forms.TextBox();
             this.ReserveGrid = new System.Windows.Forms.DataGridView();
+            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -115,24 +121,6 @@
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Room Type";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 170);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Check In Date";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 221);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Check Out Date";
             // 
             // label8
             // 
@@ -288,21 +276,6 @@
             this.txtGuestName.Size = new System.Drawing.Size(176, 20);
             this.txtGuestName.TabIndex = 82;
             // 
-            // dtpCheckIn
-            // 
-            this.dtpCheckIn.Location = new System.Drawing.Point(106, 164);
-            this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(176, 20);
-            this.dtpCheckIn.TabIndex = 83;
-            // 
-            // dtpCheckOut
-            // 
-            this.dtpCheckOut.Location = new System.Drawing.Point(106, 215);
-            this.dtpCheckOut.Name = "dtpCheckOut";
-            this.dtpCheckOut.Size = new System.Drawing.Size(176, 20);
-            this.dtpCheckOut.TabIndex = 84;
-            this.dtpCheckOut.CloseUp += new System.EventHandler(this.dtpCheckOut_CloseUp);
-            // 
             // checkingrid
             // 
             this.checkingrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -331,14 +304,15 @@
             // AmeditiesGrid
             // 
             this.AmeditiesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AmeditiesGrid.Location = new System.Drawing.Point(357, 437);
+            this.AmeditiesGrid.Location = new System.Drawing.Point(357, 486);
             this.AmeditiesGrid.Name = "AmeditiesGrid";
             this.AmeditiesGrid.Size = new System.Drawing.Size(346, 150);
             this.AmeditiesGrid.TabIndex = 89;
+            this.AmeditiesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AmeditiesGrid_CellClick);
             // 
             // btnInclude
             // 
-            this.btnInclude.Location = new System.Drawing.Point(735, 469);
+            this.btnInclude.Location = new System.Drawing.Point(186, 616);
             this.btnInclude.Name = "btnInclude";
             this.btnInclude.Size = new System.Drawing.Size(96, 23);
             this.btnInclude.TabIndex = 90;
@@ -348,6 +322,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.txtAmedityPrice);
+            this.panel1.Controls.Add(this.txtAmedityName);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.txtAmedityID);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.Reservtxtbox2);
             this.panel1.Controls.Add(this.txtHours2);
@@ -356,7 +336,7 @@
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.reservebtn1);
-            this.panel1.Controls.Add(this.amedtextb2);
+            this.panel1.Controls.Add(this.txtAmenityGuestName);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.amedtextb1);
@@ -398,10 +378,58 @@
             this.panel1.Size = new System.Drawing.Size(1229, 657);
             this.panel1.TabIndex = 1;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(55, 593);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 13);
+            this.label20.TabIndex = 113;
+            this.label20.Text = "Amenity Price";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(51, 567);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 112;
+            this.label19.Text = "Amenity Name";
+            // 
+            // txtAmedityPrice
+            // 
+            this.txtAmedityPrice.Location = new System.Drawing.Point(132, 590);
+            this.txtAmedityPrice.Name = "txtAmedityPrice";
+            this.txtAmedityPrice.Size = new System.Drawing.Size(150, 20);
+            this.txtAmedityPrice.TabIndex = 111;
+            // 
+            // txtAmedityName
+            // 
+            this.txtAmedityName.Location = new System.Drawing.Point(132, 564);
+            this.txtAmedityName.Name = "txtAmedityName";
+            this.txtAmedityName.Size = new System.Drawing.Size(150, 20);
+            this.txtAmedityName.TabIndex = 110;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(68, 545);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(58, 13);
+            this.label18.TabIndex = 109;
+            this.label18.Text = "Amenity ID";
+            // 
+            // txtAmedityID
+            // 
+            this.txtAmedityID.Location = new System.Drawing.Point(132, 538);
+            this.txtAmedityID.Name = "txtAmedityID";
+            this.txtAmedityID.Size = new System.Drawing.Size(150, 20);
+            this.txtAmedityID.TabIndex = 108;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1073, 279);
+            this.label17.Location = new System.Drawing.Point(354, 229);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(117, 13);
             this.label17.TabIndex = 107;
@@ -409,7 +437,7 @@
             // 
             // Reservtxtbox2
             // 
-            this.Reservtxtbox2.Location = new System.Drawing.Point(1076, 295);
+            this.Reservtxtbox2.Location = new System.Drawing.Point(357, 245);
             this.Reservtxtbox2.Name = "Reservtxtbox2";
             this.Reservtxtbox2.Size = new System.Drawing.Size(150, 20);
             this.Reservtxtbox2.TabIndex = 106;
@@ -423,7 +451,7 @@
             // 
             // ReservCKIbtn1
             // 
-            this.ReservCKIbtn1.Location = new System.Drawing.Point(1088, 244);
+            this.ReservCKIbtn1.Location = new System.Drawing.Point(169, 339);
             this.ReservCKIbtn1.Name = "ReservCKIbtn1";
             this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 21);
             this.ReservCKIbtn1.TabIndex = 104;
@@ -434,7 +462,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(354, 421);
+            this.label16.Location = new System.Drawing.Point(352, 470);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 13);
             this.label16.TabIndex = 103;
@@ -468,17 +496,17 @@
             this.reservebtn1.UseVisualStyleBackColor = true;
             this.reservebtn1.Click += new System.EventHandler(this.reservebtn1_Click);
             // 
-            // amedtextb2
+            // txtAmenityGuestName
             // 
-            this.amedtextb2.Location = new System.Drawing.Point(837, 540);
-            this.amedtextb2.Name = "amedtextb2";
-            this.amedtextb2.Size = new System.Drawing.Size(150, 20);
-            this.amedtextb2.TabIndex = 99;
+            this.txtAmenityGuestName.Location = new System.Drawing.Point(132, 512);
+            this.txtAmenityGuestName.Name = "txtAmenityGuestName";
+            this.txtAmenityGuestName.Size = new System.Drawing.Size(150, 20);
+            this.txtAmenityGuestName.TabIndex = 99;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(765, 547);
+            this.label13.Location = new System.Drawing.Point(60, 522);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 98;
@@ -487,7 +515,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(723, 517);
+            this.label11.Location = new System.Drawing.Point(18, 492);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 13);
             this.label11.TabIndex = 97;
@@ -495,7 +523,7 @@
             // 
             // amedtextb1
             // 
-            this.amedtextb1.Location = new System.Drawing.Point(837, 511);
+            this.amedtextb1.Location = new System.Drawing.Point(132, 486);
             this.amedtextb1.Name = "amedtextb1";
             this.amedtextb1.Size = new System.Drawing.Size(150, 20);
             this.amedtextb1.TabIndex = 96;
@@ -540,11 +568,44 @@
             // ReserveGrid
             // 
             this.ReserveGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReserveGrid.Location = new System.Drawing.Point(357, 233);
+            this.ReserveGrid.Location = new System.Drawing.Point(357, 270);
             this.ReserveGrid.Name = "ReserveGrid";
             this.ReserveGrid.Size = new System.Drawing.Size(713, 187);
             this.ReserveGrid.TabIndex = 91;
             this.ReserveGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReserveGrid_CellClick);
+            // 
+            // dtpCheckOut
+            // 
+            this.dtpCheckOut.Location = new System.Drawing.Point(106, 215);
+            this.dtpCheckOut.Name = "dtpCheckOut";
+            this.dtpCheckOut.Size = new System.Drawing.Size(176, 20);
+            this.dtpCheckOut.TabIndex = 84;
+            this.dtpCheckOut.CloseUp += new System.EventHandler(this.dtpCheckOut_CloseUp);
+            // 
+            // dtpCheckIn
+            // 
+            this.dtpCheckIn.Location = new System.Drawing.Point(106, 164);
+            this.dtpCheckIn.Name = "dtpCheckIn";
+            this.dtpCheckIn.Size = new System.Drawing.Size(176, 20);
+            this.dtpCheckIn.TabIndex = 83;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 221);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Check Out Date";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Check In Date";
             // 
             // Check_In
             // 
@@ -571,8 +632,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtRoomNumber;
         internal System.Windows.Forms.TextBox txtTotal;
@@ -588,8 +647,6 @@
         internal System.Windows.Forms.Button bttnAddAdult;
         internal System.Windows.Forms.Button bttnAddChildren;
         private System.Windows.Forms.TextBox txtGuestName;
-        private System.Windows.Forms.DateTimePicker dtpCheckIn;
-        private System.Windows.Forms.DateTimePicker dtpCheckOut;
         private System.Windows.Forms.DataGridView checkingrid;
         private System.Windows.Forms.TextBox txtRoomRate;
         private System.Windows.Forms.Label label9;
@@ -601,7 +658,7 @@
         private System.Windows.Forms.TextBox txtHours;
         private System.Windows.Forms.Button btnAddHours;
         private System.Windows.Forms.Button btnSubHours;
-        private System.Windows.Forms.TextBox amedtextb2;
+        private System.Windows.Forms.TextBox txtAmenityGuestName;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox amedtextb1;
@@ -613,5 +670,15 @@
         private System.Windows.Forms.TextBox txtHours2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox Reservtxtbox2;
+        private System.Windows.Forms.DateTimePicker dtpCheckOut;
+        private System.Windows.Forms.DateTimePicker dtpCheckIn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtAmedityID;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtAmedityPrice;
+        private System.Windows.Forms.TextBox txtAmedityName;
     }
 }
