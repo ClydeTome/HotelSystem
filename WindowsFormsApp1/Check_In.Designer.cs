@@ -53,6 +53,12 @@
             this.AmeditiesGrid = new System.Windows.Forms.DataGridView();
             this.btnInclude = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtAmedityPrice = new System.Windows.Forms.TextBox();
+            this.txtAmedityName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtAmedityID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.Reservtxtbox2 = new System.Windows.Forms.TextBox();
             this.txtHours2 = new System.Windows.Forms.TextBox();
@@ -71,15 +77,9 @@
             this.txtHours = new System.Windows.Forms.TextBox();
             this.ReserveGrid = new System.Windows.Forms.DataGridView();
             this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
-            this.txtAmedityID = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtAmedityName = new System.Windows.Forms.TextBox();
-            this.txtAmedityPrice = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -378,10 +378,58 @@
             this.panel1.Size = new System.Drawing.Size(1229, 657);
             this.panel1.TabIndex = 1;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(55, 593);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 13);
+            this.label20.TabIndex = 113;
+            this.label20.Text = "Amenity Price";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(51, 567);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 112;
+            this.label19.Text = "Amenity Name";
+            // 
+            // txtAmedityPrice
+            // 
+            this.txtAmedityPrice.Location = new System.Drawing.Point(132, 590);
+            this.txtAmedityPrice.Name = "txtAmedityPrice";
+            this.txtAmedityPrice.Size = new System.Drawing.Size(150, 20);
+            this.txtAmedityPrice.TabIndex = 111;
+            // 
+            // txtAmedityName
+            // 
+            this.txtAmedityName.Location = new System.Drawing.Point(132, 564);
+            this.txtAmedityName.Name = "txtAmedityName";
+            this.txtAmedityName.Size = new System.Drawing.Size(150, 20);
+            this.txtAmedityName.TabIndex = 110;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(68, 545);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(58, 13);
+            this.label18.TabIndex = 109;
+            this.label18.Text = "Amenity ID";
+            // 
+            // txtAmedityID
+            // 
+            this.txtAmedityID.Location = new System.Drawing.Point(132, 538);
+            this.txtAmedityID.Name = "txtAmedityID";
+            this.txtAmedityID.Size = new System.Drawing.Size(150, 20);
+            this.txtAmedityID.TabIndex = 108;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1073, 279);
+            this.label17.Location = new System.Drawing.Point(354, 229);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(117, 13);
             this.label17.TabIndex = 107;
@@ -389,7 +437,7 @@
             // 
             // Reservtxtbox2
             // 
-            this.Reservtxtbox2.Location = new System.Drawing.Point(1076, 295);
+            this.Reservtxtbox2.Location = new System.Drawing.Point(357, 245);
             this.Reservtxtbox2.Name = "Reservtxtbox2";
             this.Reservtxtbox2.Size = new System.Drawing.Size(150, 20);
             this.Reservtxtbox2.TabIndex = 106;
@@ -403,7 +451,7 @@
             // 
             // ReservCKIbtn1
             // 
-            this.ReservCKIbtn1.Location = new System.Drawing.Point(1088, 244);
+            this.ReservCKIbtn1.Location = new System.Drawing.Point(169, 339);
             this.ReservCKIbtn1.Name = "ReservCKIbtn1";
             this.ReservCKIbtn1.Size = new System.Drawing.Size(120, 21);
             this.ReservCKIbtn1.TabIndex = 104;
@@ -414,7 +462,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(354, 421);
+            this.label16.Location = new System.Drawing.Point(352, 470);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 13);
             this.label16.TabIndex = 103;
@@ -458,7 +506,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(765, 547);
+            this.label13.Location = new System.Drawing.Point(60, 522);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 98;
@@ -467,7 +515,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(723, 517);
+            this.label11.Location = new System.Drawing.Point(18, 492);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 13);
             this.label11.TabIndex = 97;
@@ -475,7 +523,7 @@
             // 
             // amedtextb1
             // 
-            this.amedtextb1.Location = new System.Drawing.Point(837, 511);
+            this.amedtextb1.Location = new System.Drawing.Point(132, 486);
             this.amedtextb1.Name = "amedtextb1";
             this.amedtextb1.Size = new System.Drawing.Size(150, 20);
             this.amedtextb1.TabIndex = 96;
@@ -534,6 +582,13 @@
             this.dtpCheckOut.TabIndex = 84;
             this.dtpCheckOut.CloseUp += new System.EventHandler(this.dtpCheckOut_CloseUp);
             // 
+            // dtpCheckIn
+            // 
+            this.dtpCheckIn.Location = new System.Drawing.Point(106, 164);
+            this.dtpCheckIn.Name = "dtpCheckIn";
+            this.dtpCheckIn.Size = new System.Drawing.Size(176, 20);
+            this.dtpCheckIn.TabIndex = 83;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -551,61 +606,6 @@
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Check In Date";
-            // 
-            // dtpCheckIn
-            // 
-            this.dtpCheckIn.Location = new System.Drawing.Point(106, 164);
-            this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(176, 20);
-            this.dtpCheckIn.TabIndex = 83;
-            // 
-            // txtAmedityID
-            // 
-            this.txtAmedityID.Location = new System.Drawing.Point(132, 538);
-            this.txtAmedityID.Name = "txtAmedityID";
-            this.txtAmedityID.Size = new System.Drawing.Size(150, 20);
-            this.txtAmedityID.TabIndex = 108;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(68, 545);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 13);
-            this.label18.TabIndex = 109;
-            this.label18.Text = "Amenity ID";
-            // 
-            // txtAmedityName
-            // 
-            this.txtAmedityName.Location = new System.Drawing.Point(132, 564);
-            this.txtAmedityName.Name = "txtAmedityName";
-            this.txtAmedityName.Size = new System.Drawing.Size(150, 20);
-            this.txtAmedityName.TabIndex = 110;
-            // 
-            // txtAmedityPrice
-            // 
-            this.txtAmedityPrice.Location = new System.Drawing.Point(132, 590);
-            this.txtAmedityPrice.Name = "txtAmedityPrice";
-            this.txtAmedityPrice.Size = new System.Drawing.Size(150, 20);
-            this.txtAmedityPrice.TabIndex = 111;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(51, 567);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 13);
-            this.label19.TabIndex = 112;
-            this.label19.Text = "Amenity Name";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(55, 593);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(71, 13);
-            this.label20.TabIndex = 113;
-            this.label20.Text = "Amenity Price";
             // 
             // Check_In
             // 
