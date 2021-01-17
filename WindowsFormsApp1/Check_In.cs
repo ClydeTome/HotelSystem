@@ -19,16 +19,26 @@ namespace WindowsFormsApp1
             FillCombo();
             DataGridUno();
             txtHours2.Hide();
+            txtAddAmenity.Hide();
+            txtAddAmenity2.Hide();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
         int adult = 0;
         int child = 0;
         int hour = 0;
+        
         /**void CheckIn()
         {
             checkingrid.SelectedRows();
         }**/
+        public string AddAmenity(string amen1, string amen2)
+        {
+            string ExistingAmenity = amen1;
+            string NewAmenity = amen2;
+            string TotalAmenity = ExistingAmenity + NewAmenity;
+            return TotalAmenity;
+        }
         void FillCombo()
         {
             string query = "SELECT RoomType FROM RegisterRoomTable";
@@ -111,7 +121,8 @@ namespace WindowsFormsApp1
                 string insertQuery = "INSERT INTO CHECKIN VALUES ('" + txtGuestName.Text.Trim() + "','"
                    + cboRoomType.Text.Trim() + "','" + txtRoomNumber.Text.Trim() + "','" + txtAdults.Text.Trim() +
                    "','" + txtChildren.Text.Trim() + "','" + dtpCheckIn.Text + DateTime.Now.ToString(" h:mm:ss tt") + "','"
-                   + dtpCheckOut.Text + DateTime.Now.AddHours(hours).ToString(" h:mm:ss tt") + "','" + txtTotal.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MMdd-t-HH-mmss" + txtHours.Text) + "');";
+                   + dtpCheckOut.Text + DateTime.Now.AddHours(hours).ToString(" h:mm:ss tt")
+                   + "','" + txtTotal.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MMdd-T-HH-mmss"+txtHours.Text)+"' , null);";
 
                 SqlCommand cmd = new SqlCommand(insertQuery, conn);
                 conn.Open();
@@ -259,19 +270,17 @@ namespace WindowsFormsApp1
                 txtTotal.Text = row.Cells[7].Value.ToString();
                 amedtextb1.Text = row.Cells[8].Value.ToString();
                 txtAmenityGuestName.Text = row.Cells[0].Value.ToString();
+                txtAddAmenity2.Text = row.Cells[9].Value.ToString();
             }
         }
 
         private void btnInclude_Click(object sender, EventArgs e)
         {
-            int rowcount = 0;
-            string prereq = "";
-            int AddAmenity = int.Parse(txtTotal.Text);
+            int AddingAmenity = int.Parse(txtTotal.Text);
             int AddAmenityPrice = int.Parse(txtAmedityPrice.Text);
-            int SumAmenity = AddAmenity + AddAmenityPrice;
+            int SumAmenity = AddingAmenity + AddAmenityPrice;
             txtTotal.Text = SumAmenity.ToString();
-            string insertQuery = "Update CHECKIN Set Amenities = '"+txtAmedityName.Text+
-                "', TotalBalance = '"+txtTotal.Text+"'" +
+            string insertQuery = "Update CHECKIN Set TotalBalance = '"+txtTotal.Text+"', Amenities = '" +AddAmenity(txtAddAmenity2.Text,txtAddAmenity.Text)+ "'" +
                 "where GuestName = '"+txtAmenityGuestName.Text+"';";
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
             conn.Open();
@@ -302,12 +311,25 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Guest Name Cannot Be Empty");
             }
+            else if (cboRoomType.Text.Equals(""))
+            {
+                MessageBox.Show("Room type cannot be empty");
+            }
+            else if (txtRoomNumber.Text.Equals(""))
+            {
+                MessageBox.Show("Room Number cannot be empty");
+            }
+            else if (adult == 0)
+            {
+                MessageBox.Show("Number of adults cannot be zero");
+            }
             else {
                 double hours = int.Parse(txtHours.Text);
                 string insertQuery = "INSERT INTO Reservations VALUES ('" + txtGuestName.Text.Trim() + "','"
                    + cboRoomType.Text.Trim() + "','" + txtRoomNumber.Text.Trim() + "','" + txtAdults.Text.Trim() +
                    "','" + txtChildren.Text.Trim() + "','" + dtpCheckIn.Text + DateTime.Now.ToString(" h:mm:ss tt") + "','"
-                   + dtpCheckOut.Text + DateTime.Now.AddHours(hours).ToString(" h:mm:ss tt") + "','" + txtTotal.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MMdd-t-HH-mmss" + txtHours.Text) + "','Reserved');";
+                   + dtpCheckOut.Text + DateTime.Now.AddHours(hours).ToString(" h:mm:ss tt")
+                   + "','" + txtTotal.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MMdd-T-HH-mmss" + txtHours.Text) + "', null, 'Reserved');";
 
                 SqlCommand cmd = new SqlCommand(insertQuery, conn);
                 conn.Open();
@@ -383,8 +405,14 @@ namespace WindowsFormsApp1
                 txtAmedityID.Text = row.Cells[0].Value.ToString();
                 txtAmedityName.Text = row.Cells[1].Value.ToString();
                 txtAmedityPrice.Text = row.Cells[2].Value.ToString();
+                txtAddAmenity.Text = row.Cells[1].Value.ToString();
 
             }
+        }
+
+        private void txtHours2_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

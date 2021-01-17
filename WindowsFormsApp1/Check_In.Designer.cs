@@ -80,6 +80,8 @@
             this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtAddAmenity = new System.Windows.Forms.TextBox();
+            this.txtAddAmenity2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.checkingrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmeditiesGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -322,6 +324,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtAddAmenity2);
+            this.panel1.Controls.Add(this.txtAddAmenity);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.txtAmedityPrice);
@@ -448,6 +452,7 @@
             this.txtHours2.Name = "txtHours2";
             this.txtHours2.Size = new System.Drawing.Size(43, 20);
             this.txtHours2.TabIndex = 105;
+            this.txtHours2.TextChanged += new System.EventHandler(this.txtHours2_TextChanged);
             // 
             // ReservCKIbtn1
             // 
@@ -607,6 +612,20 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Check In Date";
             // 
+            // txtAddAmenity
+            // 
+            this.txtAddAmenity.Location = new System.Drawing.Point(121, 619);
+            this.txtAddAmenity.Name = "txtAddAmenity";
+            this.txtAddAmenity.Size = new System.Drawing.Size(59, 20);
+            this.txtAddAmenity.TabIndex = 114;
+            // 
+            // txtAddAmenity2
+            // 
+            this.txtAddAmenity2.Location = new System.Drawing.Point(58, 619);
+            this.txtAddAmenity2.Name = "txtAddAmenity2";
+            this.txtAddAmenity2.Size = new System.Drawing.Size(54, 20);
+            this.txtAddAmenity2.TabIndex = 115;
+            // 
             // Check_In
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,5 +699,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtAmedityPrice;
         private System.Windows.Forms.TextBox txtAmedityName;
+        private System.Windows.Forms.TextBox txtAddAmenity;
+        private System.Windows.Forms.TextBox txtAddAmenity2;
     }
 }
