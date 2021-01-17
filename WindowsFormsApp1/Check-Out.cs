@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class Check_Out : Form
     {
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
 
         public Check_Out()
         {
@@ -68,7 +68,10 @@ namespace WindowsFormsApp1
 
         private void chkoutbtn1_Click(object sender, EventArgs e)
         {
-            string insertQuery = "BEGIN TRANSACTION INSERT INTO checkoutlezgo(TransactionID, GuestName, RoomType, RoomNumber, NumOfAdult, NumOfChild, CheckInDate, CheckOutDate, TotalBalance) SELECT TransactionID, GuestName, RoomType, RoomNumber, NumOfAdult, NumOfChild, CheckInDate, CheckOutDate, TotalBalance FROM CHECKIN WHERE TransactionID = '"+textBox1 .Text.Trim()+ "' DELETE FROM CHECKIN WHERE TransactionID = '"+ textBox1.Text.Trim() + "' COMMIT; ";
+            string insertQuery = "BEGIN TRANSACTION INSERT INTO checkoutlezgo" +
+                "(TransactionID, GuestName, RoomType, RoomNumber, NumOfAdult, NumOfChild, CheckInDate, CheckOutDate, TotalBalance) " +
+                "SELECT TransactionID, GuestName, RoomType, RoomNumber, NumOfAdult, NumOfChild, CheckInDate, CheckOutDate, TotalBalance " +
+                "FROM CHECKIN WHERE TransactionID = '"+textBox1 .Text.Trim()+ "' DELETE FROM CHECKIN WHERE TransactionID = '"+ textBox1.Text.Trim() + "' COMMIT; ";
             
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
             conn.Open();
