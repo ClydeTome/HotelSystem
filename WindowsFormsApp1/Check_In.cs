@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
             txtAddAmenity.Hide();
             txtAddAmenity2.Hide();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
         int adult = 0;
         int child = 0;
         int hour = 0;
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
         }**/
         public string AddAmenity(string amen1, string amen2)
         {
-            string ExistingAmenity = amen1;
+            string ExistingAmenity = amen1+", ";
             string NewAmenity = amen2;
             string TotalAmenity = ExistingAmenity + NewAmenity;
             return TotalAmenity;
@@ -276,29 +276,53 @@ namespace WindowsFormsApp1
 
         private void btnInclude_Click(object sender, EventArgs e)
         {
-            int AddingAmenity = int.Parse(txtTotal.Text);
-            int AddAmenityPrice = int.Parse(txtAmedityPrice.Text);
-            int SumAmenity = AddingAmenity + AddAmenityPrice;
-            txtTotal.Text = SumAmenity.ToString();
-            string insertQuery = "Update CHECKIN Set TotalBalance = '"+txtTotal.Text+"', Amenities = '" +AddAmenity(txtAddAmenity2.Text,txtAddAmenity.Text)+ "'" +
-                "where GuestName = '"+txtAmenityGuestName.Text+"';";
-            SqlCommand cmd = new SqlCommand(insertQuery, conn);
-            conn.Open();
-            try
+            if (amedtextb1.Text.Equals(""))
             {
-                if (cmd.ExecuteNonQuery() == 1)
+                MessageBox.Show("Guest Transact ID Cannot Be Empty");
+            }
+            else if (txtAmenityGuestName.Text.Equals(""))
+            {
+                MessageBox.Show("Guest Name Cannot Be Empty");
+            }
+            else if (txtAmedityID.Text.Equals(""))
+            {
+                MessageBox.Show("Amenity ID Cannot Be Empty");
+            }
+            else if (txtAmedityName.Text.Equals(""))
+            {
+                MessageBox.Show("Amenity Name Cannot Be Empty");
+            }
+            else if (txtAmedityPrice.Text.Equals(""))
+            {
+                MessageBox.Show("Amenity Price Cannot Be Empty");
+            }
+            else
+            {
+                int AddingAmenity = int.Parse(txtTotal.Text);
+                int AddAmenityPrice = int.Parse(txtAmedityPrice.Text);
+                int SumAmenity = AddingAmenity + AddAmenityPrice;
+                txtTotal.Text = SumAmenity.ToString();
+                string insertQuery = "Update CHECKIN Set TotalBalance = '" + txtTotal.Text + "', Amenities = '" + AddAmenity(txtAddAmenity2.Text, txtAddAmenity.Text) + "'" +
+                    "where GuestName = '" + txtAmenityGuestName.Text + "';";
+                SqlCommand cmd = new SqlCommand(insertQuery, conn);
+                conn.Open();
+                try
                 {
-                    MessageBox.Show("Data Inserted");
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Data Inserted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data Not Inserted");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Data Not Inserted");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
             conn.Close();
             DataGridUno();
             Clear_Text();

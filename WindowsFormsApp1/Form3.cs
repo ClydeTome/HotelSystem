@@ -19,8 +19,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
             FillGrid();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-DESKTOP-2BAN13A\SQLEXPRESS;Initial Catalog=HotelReservation;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-40PIGQM;Initial Catalog=HotelReservation;Integrated Security=True");
         public void FillGrid()
         {
             SqlCommand comm = new SqlCommand("select * from RegisterRoomTable", conn);
